@@ -870,6 +870,7 @@ const dimensionCopy = {
 
 const storageKey = "mbti-flow-state-v2";
 let state = loadState();
+let answerAdvanceTimer = null;
 
 const els = {
   introView: document.querySelector("#introView"),
@@ -1022,6 +1023,11 @@ function buildStageList() {
 }
 
 function renderQuestion() {
+  if (answerAdvanceTimer) {
+    clearTimeout(answerAdvanceTimer);
+    answerAdvanceTimer = null;
+  }
+
   const identity = currentIdentity();
   const questions = currentQuestions();
 
@@ -1074,6 +1080,20 @@ function answerCurrent(value) {
   }
 
   renderQuestion();
+}
+
+function selectAnswerWithDelay(button, value) {
+  if (answerAdvanceTimer) return;
+
+  [...els.options.querySelectorAll(".option-button")].forEach((option) => {
+    option.classList.toggle("selected", option === button);
+    option.disabled = true;
+  });
+
+  answerAdvanceTimer = window.setTimeout(() => {
+    answerAdvanceTimer = null;
+    answerCurrent(value);
+  }, 350);
 }
 
 function renderCheckpoint(stageIndex) {
@@ -1352,7 +1372,7 @@ els.startForm.addEventListener("submit", (event) => {
 els.options.addEventListener("click", (event) => {
   const button = event.target.closest("button[data-value]");
   if (!button) return;
-  answerCurrent(Number(button.dataset.value));
+  selectAnswerWithDelay(button, Number(button.dataset.value));
 });
 
 els.backButton.addEventListener("click", () => {

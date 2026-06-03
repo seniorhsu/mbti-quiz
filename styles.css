@@ -437,9 +437,15 @@ input:focus {
   outline: none;
 }
 
+.option-button:disabled {
+  cursor: default;
+  opacity: 0.78;
+}
+
 .option-button.selected {
   border-color: var(--ink);
   background: var(--yellow);
+  opacity: 1;
 }
 
 .quiz-actions,
