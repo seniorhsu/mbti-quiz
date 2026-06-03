@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MBTI Flow Test</title>
+    <meta
+      name="description"
+      content="一個手機與桌面都好操作的沉浸式 MBTI 測驗。"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero" id="introView" aria-labelledby="heroTitle">
+        <div class="hero-copy">
+          <p class="eyebrow">4 種身分 · 各 56 題 · 7 個短關卡</p>
+          <h1 id="heroTitle">先選你現在最想被理解的身分。</h1>
+          <p class="hero-text">
+            學生、上班族、戀愛、朋友，每種身分都有自己的情境題。最後同時看見
+            MBTI 類型與身分專屬人格。
+          </p>
+
+          <form class="start-panel" id="startForm">
+            <label for="nickname">怎麼稱呼你？</label>
+            <div class="start-row">
+              <input
+                id="nickname"
+                name="nickname"
+                type="text"
+                maxlength="16"
+                placeholder="例如：小晴"
+                autocomplete="nickname"
+              />
+              <button class="primary-action" type="submit">開始測驗</button>
+            </div>
+            <div class="identity-picker">
+              <p>選擇這次要測的身分</p>
+              <div class="identity-options" id="identityOptions"></div>
+            </div>
+          </form>
+        </div>
+
+        <div class="hero-art" aria-hidden="true">
+          <img
+            src="assets/personality-constellation.png"
+            alt=""
+            class="hero-image"
+          />
+          <div class="stat-strip">
+            <span>身分入口</span>
+            <strong>4</strong>
+            <span>種深度題庫</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="quiz-layout hidden" id="quizView" aria-live="polite">
+        <aside class="progress-panel">
+          <div>
+            <p class="eyebrow">MBTI Flow</p>
+            <h2 id="stageTitle">社交能量</h2>
+            <p id="stageHint">觀察你如何補充能量。</p>
+          </div>
+
+          <div class="meter-block">
+            <div class="meter-label">
+              <span id="progressText">1 / 56</span>
+              <span id="timeText">約 6 分鐘</span>
+            </div>
+            <div class="progress-track">
+              <span id="progressBar"></span>
+            </div>
+          </div>
+
+          <ol class="stage-list" id="stageList"></ol>
+        </aside>
+
+        <section class="question-panel">
+          <div class="mobile-topline">
+            <span id="mobileStage">社交能量</span>
+            <span id="mobileProgress">1 / 56</span>
+          </div>
+          <div class="question-card">
+            <p class="question-kicker" id="questionKicker">第 1 題</p>
+            <h2 id="questionText"></h2>
+            <div class="options" id="options"></div>
+          </div>
+
+          <div class="quiz-actions">
+            <button class="ghost-action" id="backButton" type="button">上一題</button>
+            <button class="ghost-action danger" id="resetButton" type="button">重新開始</button>
+          </div>
+        </section>
+      </section>
+
+      <section class="checkpoint hidden" id="checkpointView" aria-live="polite">
+        <div class="checkpoint-inner">
+          <p class="eyebrow" id="checkpointEyebrow">完成第 1 關</p>
+          <h2 id="checkpointTitle"></h2>
+          <p id="checkpointText"></p>
+          <button class="primary-action" id="continueButton" type="button">
+            前往下一關
+          </button>
+        </div>
+      </section>
+
+      <section class="result hidden" id="resultView">
+        <div class="result-hero">
+          <div>
+            <p class="eyebrow">你的核心結果</p>
+            <h2>
+              <span id="resultName">INFP</span>
+              <small id="resultTitle">靈感型探索者</small>
+            </h2>
+            <p id="resultSummary"></p>
+          </div>
+          <div class="type-badge" id="typeBadge">INFP</div>
+        </div>
+
+        <div class="result-grid">
+          <section class="result-block">
+            <h3>四維度比例</h3>
+            <div class="dimension-bars" id="dimensionBars"></div>
+          </section>
+
+          <section class="result-block accent">
+            <h3 id="identityResultTitle">身分人格</h3>
+            <p class="identity-result-text" id="identityResultText"></p>
+          </section>
+
+          <section class="result-block accent">
+            <h3>免費摘要</h3>
+            <ul id="freeInsights"></ul>
+          </section>
+
+          <section class="result-block locked">
+            <h3>進階報告</h3>
+            <p>
+              解鎖戀愛模式、朋友相處、職涯方向、壓力下的變形人格與 16
+              型相容性。
+            </p>
+            <button class="primary-action" id="unlockButton" type="button">
+              模擬解鎖
+            </button>
+          </section>
+        </div>
+
+        <section class="advanced-report hidden" id="advancedReport">
+          <div class="advanced-heading">
+            <p class="eyebrow">進階報告已解鎖</p>
+            <h3>更像一份給自己的使用說明書。</h3>
+          </div>
+          <div class="advanced-grid" id="advancedInsights"></div>
+        </section>
+
+        <div class="result-actions">
+          <button class="ghost-action" id="downloadShareButton" type="button">
+            下載分享圖
+          </button>
+          <button class="ghost-action" id="retakeButton" type="button">
+            再測一次
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <canvas class="hidden" id="shareCanvas" width="1080" height="1080"></canvas>
+    <script src="app.js"></script>
+  </body>
+</html>
