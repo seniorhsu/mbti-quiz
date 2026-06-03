@@ -1,9 +1,9 @@
 const optionLabels = [
-  { label: "完全不會", value: -2 },
-  { label: "不太會", value: -1 },
-  { label: "看情況", value: 0 },
-  { label: "有時會", value: 1 },
-  { label: "很常會", value: 2 },
+  { label: "完全不像我", value: -2 },
+  { label: "比較不像", value: -1 },
+  { label: "一半一半", value: 0 },
+  { label: "有點像我", value: 1 },
+  { label: "很像我", value: 2 },
 ];
 
 const traitPattern = ["E", "I", "S", "N", "T", "F", "J", "P"];
@@ -958,6 +958,29 @@ function stageIndexForQuestion(index) {
   return Math.floor(index / 8);
 }
 
+function formatQuestionText(text) {
+  return text
+    .replace(/你會不會/g, "我會不會")
+    .replace(/你會/g, "我會")
+    .replace(/你需要/g, "我需要")
+    .replace(/你比較/g, "我比較")
+    .replace(/你通常/g, "我通常")
+    .replace(/你常常/g, "我常常")
+    .replace(/你常/g, "我常")
+    .replace(/你喜歡/g, "我喜歡")
+    .replace(/你希望/g, "我希望")
+    .replace(/你想要/g, "我想要")
+    .replace(/你能/g, "我能")
+    .replace(/你不/g, "我不")
+    .replace(/你容易/g, "我容易")
+    .replace(/你在/g, "我在")
+    .replace(/你也/g, "我也")
+    .replace(/你最/g, "我最")
+    .replace(/你真的/g, "我真的")
+    .replace(/^你/g, "我")
+    .replace(/嗎？$/g, "。");
+}
+
 function show(view) {
   [els.introView, els.quizView, els.checkpointView, els.resultView].forEach((node) =>
     node.classList.add("hidden"),
@@ -1022,7 +1045,7 @@ function renderQuestion() {
   els.timeText.textContent = `剩約 ${Math.max(1, Math.ceil((questions.length - state.current) * 0.11))} 分鐘`;
   els.progressBar.style.width = `${percent}%`;
   els.questionKicker.textContent = `第 ${state.current + 1} 題 · ${identity.label} · ${stage.title}`;
-  els.questionText.textContent = question.text;
+  els.questionText.textContent = formatQuestionText(question.text);
   els.backButton.disabled = state.current === 0;
 
   [...els.stageList.children].forEach((item, index) => {
