@@ -586,6 +586,7 @@ const els = {
   stageList: document.querySelector("#stageList"),
   mobileStage: document.querySelector("#mobileStage"),
   mobileProgress: document.querySelector("#mobileProgress"),
+  mobileProgressBar: document.querySelector("#mobileProgressBar"),
   questionKicker: document.querySelector("#questionKicker"),
   questionText: document.querySelector("#questionText"),
   options: document.querySelector("#options"),
@@ -715,6 +716,7 @@ function renderQuestion() {
   els.stageHint.textContent = `${identity.label}測驗 · ${stage.hint}`;
   els.progressText.textContent = `${state.current + 1} / ${questions.length}`;
   els.mobileProgress.textContent = `${state.current + 1} / ${questions.length}`;
+  els.mobileProgressBar.style.width = `${percent}%`;
   els.mobileStage.textContent = stage.title;
   els.timeText.textContent = `剩約 ${Math.max(1, Math.ceil((questions.length - state.current) * 0.11))} 分鐘`;
   els.progressBar.style.width = `${percent}%`;

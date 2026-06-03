@@ -78,8 +78,13 @@
 
         <section class="question-panel">
           <div class="mobile-topline">
-            <span id="mobileStage">社交能量</span>
-            <span id="mobileProgress">1 / 56</span>
+            <div class="mobile-topline-row">
+              <span id="mobileStage">社交能量</span>
+              <span id="mobileProgress">1 / 56</span>
+            </div>
+            <div class="mobile-progress-track">
+              <span id="mobileProgressBar"></span>
+            </div>
           </div>
           <div class="question-card">
             <p class="question-kicker" id="questionKicker">第 1 題</p>
@@ -119,22 +124,22 @@
         </div>
 
         <div class="result-grid">
-          <section class="result-block">
+          <section class="result-block dimension-result">
             <h3>四維度比例</h3>
             <div class="dimension-bars" id="dimensionBars"></div>
           </section>
 
-          <section class="result-block accent">
+          <section class="result-block accent identity-result">
             <h3 id="identityResultTitle">身分人格</h3>
             <p class="identity-result-text" id="identityResultText"></p>
           </section>
 
-          <section class="result-block accent">
+          <section class="result-block accent free-result">
             <h3>免費摘要</h3>
             <ul id="freeInsights"></ul>
           </section>
 
-          <section class="result-block locked">
+          <section class="result-block locked unlock-result">
             <h3>進階報告</h3>
             <p>
               解鎖戀愛模式、朋友相處、職涯方向、壓力下的變形人格與 16
