@@ -140,7 +140,7 @@ const identityDrafts = {
     ],
   },
   worker: {
-    label: "上班族",
+    label: "工作",
     badge: "職",
     description: "工作節奏、溝通、成就感與職涯。",
     resultPrefix: "職場人格",
