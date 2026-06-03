@@ -567,6 +567,307 @@ const typeProfiles = {
   ENTJ: ["遠征型指揮者", "你目標清楚、推進力強，擅長整合資源完成大事。"],
 };
 
+const typeReportProfiles = {
+  ISTJ: {
+    title: "秩序型實踐者",
+    paidName: "穩定守序型",
+    core:
+      "你不是保守，而是很清楚混亂會帶來多少成本。你習慣先確認規則、責任和可執行的步驟，然後一步一步把事情做好。別人可能覺得你慢熱，但真正重要的事，你通常比誰都可靠。",
+    strengths: ["能把模糊事情整理成步驟", "重視承諾，說到做到", "在壓力下仍能維持基本秩序"],
+    blindspots: ["容易把變動視為麻煩", "不太習慣即興表達需求", "對自己和別人的標準都偏高"],
+    stress: "壓力大時，你會更想抓住規則和細節，甚至變得有點緊繃。你真正需要的是先確認最重要的三件事，而不是試圖一次控制全部。",
+    fit: "你適合清楚、有責任感、尊重承諾的人與環境。太混亂、太常改方向的狀態會快速消耗你。",
+  },
+  ISFJ: {
+    title: "溫柔型守護者",
+    paidName: "細節守護型",
+    core:
+      "你常常不是用大聲表達存在感，而是用細節讓人感覺安心。你記得別人的需求，也願意在關鍵時候補位。你的溫柔不是軟弱，是你真的把關係和責任放在心上。",
+    strengths: ["很會照顧現場細節", "能讓人感到被記得、被支持", "穩定且有耐心"],
+    blindspots: ["容易把自己的需求往後放", "不喜歡麻煩別人，卻常被別人麻煩", "怕破壞氣氛而忍太久"],
+    stress: "壓力下你會更想把事情扛好，但也容易一邊付出一邊委屈。你需要練習早一點說出界線，而不是等到心裡累積成失望。",
+    fit: "你適合珍惜細節、會回應你付出的人。只會索取、很少感謝的人會讓你慢慢枯掉。",
+  },
+  INFJ: {
+    title: "洞察型引路人",
+    paidName: "深層洞察型",
+    core:
+      "你很容易看見事情表面下的脈絡，也很在意一件事到底有沒有意義。你不只是想完成任務，你想知道自己為什麼要做。當你覺得方向對了，你會有很強的投入感。",
+    strengths: ["能看見人的動機與潛力", "重視長期意義", "有安靜但堅定的影響力"],
+    blindspots: ["容易想太深而不易開口", "對關係和理想有高期待", "失望時會突然抽離"],
+    stress: "壓力大時，你會把小訊號解讀成很大的意義，越想越沉。你需要把腦內劇情寫下來，分清楚事實、推測和感受。",
+    fit: "你適合能深聊、尊重價值觀、願意一起成長的人與環境。太表面或太功利的地方會讓你失去力氣。",
+  },
+  INTJ: {
+    title: "策略型設計者",
+    paidName: "長線策略型",
+    core:
+      "你天生會想系統怎麼運作、未來怎麼變好。你不一定喜歡被很多人打擾，但你很擅長把長期目標拆成路線。你真正重視的不是控制別人，而是讓事情更有效率、更接近理想解。",
+    strengths: ["擅長長期規劃", "能看出系統漏洞", "不容易被短期情緒帶走"],
+    blindspots: ["容易低估情緒溝通的重要", "對效率低的人耐心有限", "有時太早看見問題而顯得冷"],
+    stress: "壓力下你會更想退回自己的腦中重建策略，也可能變得過度批判。先處理最卡的瓶頸，比重做整套系統更有效。",
+    fit: "你適合有自主權、能思考長線、尊重專業的環境。一直救火或重複低效會讓你非常消耗。",
+  },
+  ISTP: {
+    title: "冷靜型解題者",
+    paidName: "現場拆解型",
+    core:
+      "你不是沒有情緒，而是遇到事情時會先看怎麼解。你喜歡直接面對問題本身，找出可以動手修的地方。比起空談，你更相信實際測試和現場反應。",
+    strengths: ["臨場反應快", "能冷靜拆問題", "不容易被形式綁住"],
+    blindspots: ["不太習慣解釋自己的感受", "容易讓人覺得忽冷忽熱", "長期承諾需要足夠自由"],
+    stress: "壓力下你會想切斷干擾，只處理眼前問題。這很有效，但也容易讓身邊的人不知道你到底怎麼了。",
+    fit: "你適合重視實作、自由度高、能讓你自己找方法的環境。太多會議和情緒拉扯會磨掉你的耐心。",
+  },
+  ISFP: {
+    title: "感受型創作者",
+    paidName: "真實感受型",
+    core:
+      "你很重視真實感。你不一定會把所有想法說出來，但你其實非常知道自己喜不喜歡、舒不舒服。當環境允許你自然表達，你會展現很細緻的美感和溫度。",
+    strengths: ["感受細膩", "重視真誠和當下", "能用行動或作品表達心意"],
+    blindspots: ["不喜歡被逼著表態", "容易把不舒服悶在心裡", "遇到壓迫會想逃開"],
+    stress: "壓力下你會更想保護自己的空間，也可能突然不想回應。你需要先承認不舒服，再選一個小方式把界線說出來。",
+    fit: "你適合尊重自由、允許真實表達的人與環境。太多評判和控制會讓你失去自己。",
+  },
+  INFP: {
+    title: "靈感型探索者",
+    paidName: "價值探索型",
+    core:
+      "你很在意事情是不是符合內心的價值。你不是不現實，而是如果一件事沒有意義，你很難長期投入。你常常在安靜中累積很多感受與想法，只是需要安全的地方表達。",
+    strengths: ["很會理解複雜感受", "重視真誠和意義", "有想像力與同理心"],
+    blindspots: ["容易理想化人或關係", "被否定時會縮回去", "行動容易被心情影響"],
+    stress: "壓力下你會陷入自我懷疑，覺得是不是自己不夠好。把問題拆小，先做一個 10 分鐘能完成的行動，會比一直想更有幫助。",
+    fit: "你適合能尊重你的感受、給你空間長出答案的人與環境。太功利或太壓迫的地方會讓你慢慢失去熱情。",
+  },
+  INTP: {
+    title: "概念型分析者",
+    paidName: "理論拆解型",
+    core:
+      "你喜歡弄懂事情真正的原理。你不滿足於表面答案，會一直問：為什麼？如果規則不合理，你很難只是照做。你真正享受的是把混亂概念拆到乾淨。",
+    strengths: ["擅長分析系統與概念", "能保持懷疑精神", "不容易盲目跟風"],
+    blindspots: ["想太多而啟動慢", "情緒表達可能太簡略", "容易低估日常執行的重要"],
+    stress: "壓力下你會躲進分析裡，想找到完美答案才開始。你需要設定一個夠好的版本先推出，不必等全懂才行動。",
+    fit: "你適合有思考自由、允許探索、尊重邏輯的環境。過度重視形式和人情壓力會讓你很累。",
+  },
+  ESTP: {
+    title: "行動型玩家",
+    paidName: "即戰反應型",
+    core:
+      "你很會讀現場，也敢在不確定中先動起來。你不是魯莽，而是你的大腦常常需要透過行動獲得資訊。越真實、越有挑戰，你越容易醒過來。",
+    strengths: ["反應快", "敢嘗試", "擅長抓現場機會"],
+    blindspots: ["容易覺得長期規劃無聊", "可能忽略別人的細膩感受", "太慢的流程會讓你失去耐心"],
+    stress: "壓力下你會想立刻做點什麼，但有時會太快跳進下一個刺激。先停 30 秒確認後果，會讓你的行動更有威力。",
+    fit: "你適合變動快、能實戰、重視結果的環境。太多等待和紙上談兵會讓你煩躁。",
+  },
+  ESFP: {
+    title: "熱力型體驗家",
+    paidName: "現場感染型",
+    core:
+      "你很會讓場域變得有生命力。你重視真實體驗，也容易感受到人的反應。你不是只愛玩，而是你知道人和人之間的溫度很重要。",
+    strengths: ["有感染力", "擅長活絡氣氛", "能快速感受現場狀態"],
+    blindspots: ["不喜歡太沉重的長期壓力", "容易為了氣氛忽略自己的疲憊", "不愛被死板規則綁住"],
+    stress: "壓力下你可能會用更多活動或社交分散焦慮，但真正需要的是找一個能讓你卸下表演感的人。",
+    fit: "你適合有互動、有回饋、有真實體驗的環境。太冷、太硬、太沒有回應的地方會讓你失去光。",
+  },
+  ENFP: {
+    title: "火花型啟發者",
+    paidName: "靈感點火型",
+    core:
+      "你很容易被可能性點燃，也很擅長把人和想法連在一起。你不是三分鐘熱度，而是你需要感覺事情有生命力。當你覺得有意義，你會變得非常有感染力。",
+    strengths: ["很會啟發別人", "想像力強", "能在不同人事物間找到連結"],
+    blindspots: ["容易開始很多事但收尾困難", "太在意可能性而忽略限制", "情緒和興趣會影響穩定度"],
+    stress: "壓力下你會在很多選項間跳來跳去，越想越焦慮。把選擇縮到兩個，再設定一個短期限，會讓你重新有方向。",
+    fit: "你適合自由、創意、能和人互動的環境。太重複、太封閉、太沒有意義的任務會讓你快速乾掉。",
+  },
+  ENTP: {
+    title: "辯證型創新者",
+    paidName: "破框辯證型",
+    core:
+      "你喜歡挑戰既有答案，因為你總能想到另一種可能。你不是單純愛反駁，而是你的腦袋會自然測試觀點能不能站得住。好的討論會讓你越來越有精神。",
+    strengths: ["擅長打開新角度", "反應快、點子多", "不怕挑戰假設"],
+    blindspots: ["容易讓人覺得太銳利", "收尾和細節可能不是最愛", "有時把情緒問題當辯論題"],
+    stress: "壓力下你會更想用聰明解法逃離卡住感，但有些問題不是換角度就結束，還需要承擔和完成。",
+    fit: "你適合開放討論、能創新、容許試錯的環境。太僵硬、不能問為什麼的地方會讓你想拆牆。",
+  },
+  ESTJ: {
+    title: "效率型管理者",
+    paidName: "目標管理型",
+    core:
+      "你重視結果、責任和清楚分工。你不是想控制所有人，而是看見混亂時會本能地想讓事情回到軌道。當目標明確，你很能帶著大家往前走。",
+    strengths: ["推進力強", "擅長管理資源", "重視責任和效率"],
+    blindspots: ["容易對慢節奏缺乏耐心", "可能太快下判斷", "不一定會先處理情緒面"],
+    stress: "壓力下你會更想下指令和加速，卻可能讓旁人更緊繃。先確認大家理解目標，會比直接催更有效。",
+    fit: "你適合目標明確、權責清楚、重視成果的環境。長期模糊和拖延會讓你非常煩。",
+  },
+  ESFJ: {
+    title: "連結型組織者",
+    paidName: "關係照應型",
+    core:
+      "你很會注意人和人之間的狀態，也願意為了群體順利多做一點。你不是討好，而是你知道關係穩定時，事情才會更好推進。",
+    strengths: ["擅長照顧群體氣氛", "有責任感", "能讓人感到被支持"],
+    blindspots: ["容易過度在意別人看法", "不太喜歡衝突", "可能把自己的需要放太後面"],
+    stress: "壓力下你會更努力照顧大家，卻忘記自己也需要被照顧。你需要把『我也需要』說出口，不要只靠別人猜。",
+    fit: "你適合重視合作、回應和互相支持的環境。冷漠、缺乏感謝的地方會讓你受傷。",
+  },
+  ENFJ: {
+    title: "鼓舞型領航者",
+    paidName: "人心領航型",
+    core:
+      "你很會看見人的潛力，也常自然承擔帶領大家的角色。你不只是想成功，你希望身邊的人也一起變好。當你相信一個方向，你的感染力很強。",
+    strengths: ["擅長鼓舞和整合人", "重視共同成長", "能讀懂群體情緒"],
+    blindspots: ["容易背太多人的期待", "害怕讓人失望", "有時太快替別人安排答案"],
+    stress: "壓力下你會更想把所有人照顧好，但這會讓你耗盡。真正成熟的帶領，是允許別人承擔自己的部分。",
+    fit: "你適合有使命感、需要溝通整合、能創造影響的環境。太冷漠或太只看數字的地方會削弱你。",
+  },
+  ENTJ: {
+    title: "遠征型指揮者",
+    paidName: "目標遠征型",
+    core:
+      "你很擅長看見目標、整合資源，然後推動事情往前。你不是不能溫柔，而是當你看見方向時，會本能地想提升效率。你真正需要的是夠大的舞台和夠清楚的挑戰。",
+    strengths: ["決策果斷", "擅長整合資源", "能承擔高壓目標"],
+    blindspots: ["容易忽略他人的節奏", "對低效率忍耐度低", "情緒細節可能處理得太晚"],
+    stress: "壓力下你會更想掌控全局，甚至把所有問題都當成要被解決的任務。記得有些人需要先被理解，才有力氣一起前進。",
+    fit: "你適合挑戰高、資源可整合、能看見成果的環境。太小的格局和太慢的決策會讓你坐不住。",
+  },
+};
+
+const identityReportProfiles = {
+  student: {
+    label: "學生",
+    theme: "學習、同儕與未來選擇",
+    hook: "你現在最需要的不是更努力，而是找到最適合自己的學習啟動方式。",
+    paidSuffixes: {
+      ISTJ: "穩紮規劃型學生",
+      ISFJ: "細節守護型學生",
+      INFJ: "深度理想型學生",
+      INTJ: "長線策略型學生",
+      ISTP: "實作解題型學生",
+      ISFP: "感受創作型學生",
+      INFP: "價值探索型學生",
+      INTP: "概念研究型學生",
+      ESTP: "臨場行動型學生",
+      ESFP: "熱力體驗型學生",
+      ENFP: "靈感探索型學生",
+      ENTP: "破框思辨型學生",
+      ESTJ: "目標管理型學生",
+      ESFJ: "同儕連結型學生",
+      ENFJ: "鼓舞帶隊型學生",
+      ENTJ: "遠征目標型學生",
+    },
+    focus: [
+      "把讀書方法調成適合你的能量節奏，而不是硬套別人的時間表。",
+      "分清楚你是缺方法、缺動力，還是缺一個讓你覺得有意義的方向。",
+      "面對未來選擇時，同時看現實條件和你真正願意長期投入的事。",
+    ],
+    environment: "適合有清楚目標、但仍保留探索空間的學習環境。",
+    compatibility: "適合和能互補節奏的人一起讀書：有人幫你穩定，有人幫你打開視野。",
+    exercises: ["這週只挑一科，用 25 分鐘小段落開始。", "把一個大目標拆成今天能做的三步。", "寫下你不想讀的真正原因，不要只罵自己懶。"],
+  },
+  worker: {
+    label: "工作",
+    theme: "工作節奏、溝通與職涯方向",
+    hook: "你不是只在找一份工作，而是在找一個不會每天消耗自己的位置。",
+    paidSuffixes: {
+      ISTJ: "穩定執行型工作者",
+      ISFJ: "細節支援型工作者",
+      INFJ: "使命洞察型工作者",
+      INTJ: "系統策略型工作者",
+      ISTP: "現場解題型工作者",
+      ISFP: "真實創作型工作者",
+      INFP: "價值驅動型工作者",
+      INTP: "概念分析型工作者",
+      ESTP: "即戰行動型工作者",
+      ESFP: "現場感染型工作者",
+      ENFP: "靈感點火型工作者",
+      ENTP: "破框創新型工作者",
+      ESTJ: "效率管理型工作者",
+      ESFJ: "團隊照應型工作者",
+      ENFJ: "人心領航型工作者",
+      ENTJ: "目標遠征型工作者",
+    },
+    focus: [
+      "觀察你每天最常被什麼消耗：模糊需求、人際氣氛、重複任務，還是缺少自主權。",
+      "把你的強項放到對的位置，否則優勢也會變成壓力來源。",
+      "職涯選擇不只看薪水，也要看這份工作會不會長期使用你的核心能力。",
+    ],
+    environment: "適合權責清楚、回饋具體、能看見成長路線的工作環境。",
+    compatibility: "適合和尊重專業、願意清楚溝通的人合作。你不需要猜來猜去的職場關係。",
+    exercises: ["列出這份工作最消耗你的三件事。", "把下週最重要的任務寫成可交付成果。", "練習把需求說成『我需要什麼條件才能做好』。"],
+  },
+  love: {
+    label: "戀愛",
+    theme: "安全感、靠近方式與長期相處",
+    hook: "你在愛裡最想要的，通常也是你最害怕失去的。",
+    paidSuffixes: {
+      ISTJ: "穩定承諾型戀人",
+      ISFJ: "細膩守護型戀人",
+      INFJ: "深層共鳴型戀人",
+      INTJ: "長線規劃型戀人",
+      ISTP: "冷靜行動型戀人",
+      ISFP: "真實感受型戀人",
+      INFP: "慢熱高共感戀人",
+      INTP: "理性觀察型戀人",
+      ESTP: "直接熱烈型戀人",
+      ESFP: "甜感體驗型戀人",
+      ENFP: "高共鳴自由戀人",
+      ENTP: "火花互動型戀人",
+      ESTJ: "明確承擔型戀人",
+      ESFJ: "溫暖照應型戀人",
+      ENFJ: "深情引導型戀人",
+      ENTJ: "堅定推進型戀人",
+    },
+    focus: [
+      "看懂你要安全感時，其實是在要清楚、回應、承諾，還是被理解。",
+      "辨識你衝突時會靠近、退開、講道理，還是先照顧情緒。",
+      "長期關係裡，你需要的不是完美伴侶，而是能和你一起修正的人。",
+    ],
+    environment: "適合穩定回應、尊重界線、願意把話說清楚的關係。",
+    compatibility: "適合能讓你安心做自己的人；不是一直刺激你，而是讓你不用猜。",
+    exercises: ["把『你都不懂我』改成『我現在需要你怎麼回應』。", "列出三個會讓你有安全感的具體行為。", "衝突後先問：我是要解法、道歉，還是靠近？"],
+  },
+  friend: {
+    label: "朋友",
+    theme: "交友、陪伴、信任與界線",
+    hook: "你在友情裡的樣子，常常比你自己以為的更有影響力。",
+    paidSuffixes: {
+      ISTJ: "穩定守約型朋友",
+      ISFJ: "細節照顧型朋友",
+      INFJ: "深層理解型朋友",
+      INTJ: "清醒建議型朋友",
+      ISTP: "低調解題型朋友",
+      ISFP: "真誠陪伴型朋友",
+      INFP: "心靈共鳴型朋友",
+      INTP: "理性拆解型朋友",
+      ESTP: "即時救援型朋友",
+      ESFP: "氣氛陪跑型朋友",
+      ENFP: "火花連結型朋友",
+      ENTP: "靈感吐槽型朋友",
+      ESTJ: "可靠推進型朋友",
+      ESFJ: "溫暖組織型朋友",
+      ENFJ: "鼓舞支持型朋友",
+      ENTJ: "方向拉抬型朋友",
+    },
+    focus: [
+      "看懂你是用陪伴、建議、行動，還是共鳴在支持朋友。",
+      "建立界線不是變冷淡，而是避免友情變成單方面消耗。",
+      "你真正需要的朋友，不一定最多，但一定要能尊重你的相處節奏。",
+    ],
+    environment: "適合互相回應、能尊重界線、關係不靠猜測維持的朋友圈。",
+    compatibility: "適合和願意珍惜你付出、也能在你需要時回頭看見你的人深交。",
+    exercises: ["下次朋友求助前，先問自己今天有沒有餘力。", "把一段讓你累的友情寫下來，找出真正越界的地方。", "主動約一個讓你舒服的人，不只等別人需要你。"],
+  },
+};
+
+const dimensionCopy = {
+  E: "你會透過互動、交流和外部刺激整理自己。",
+  I: "你需要安靜、距離和獨處時間把自己整理回來。",
+  S: "你重視具體線索、實際做法和看得見的結果。",
+  N: "你會自然連結未來、意義和還沒成形的可能性。",
+  T: "你做判斷時會先看邏輯、標準和是否有效。",
+  F: "你做判斷時會把感受、關係和人的狀態放進來。",
+  J: "你在有結構、期限和明確安排時比較穩。",
+  P: "你在保有彈性、選擇和變化時比較能發揮。",
+};
+
 const storageKey = "mbti-flow-state-v2";
 let state = loadState();
 
@@ -794,25 +1095,92 @@ function calculateScores() {
   };
 }
 
+function buildReport(result) {
+  const identity = currentIdentity();
+  const typeProfile = typeReportProfiles[result.type] || typeReportProfiles.INFP;
+  const identityProfile = identityReportProfiles[state.selectedIdentity] || identityReportProfiles.student;
+  const paidName = identityProfile.paidSuffixes[result.type] || `${typeProfile.paidName}${identityProfile.label}`;
+  const strongest = [...result.dimensions].sort(
+    (a, b) => Math.abs(b.aPercent - 50) - Math.abs(a.aPercent - 50),
+  )[0];
+  const balanced = result.dimensions.filter((dimension) => Math.abs(dimension.aPercent - 50) <= 8);
+  const winners = result.type.split("");
+
+  const freeInsights = [
+    `64 種身分人格：${result.type} ${identityProfile.label}，你的結果是「${paidName}」。`,
+    `最明顯傾向：${strongest.winner} 軸比較突出，${dimensionCopy[strongest.winner]}`,
+    balanced.length
+      ? `接近平衡：${balanced.map((dimension) => `${dimension.a}/${dimension.b}`).join("、")} 不是不穩，而是你會依情境切換。`
+      : `整體輪廓明確：你的四個維度有足夠差距，結果比較像穩定傾向。`,
+    `立即建議：${identityProfile.focus[0]}`,
+  ];
+
+  return {
+    paidName,
+    identityProfile,
+    typeProfile,
+    coreSummary: `${typeProfile.core} 放在「${identityProfile.theme}」裡看，重點會變成：${identityProfile.hook}`,
+    freeInsights,
+    sections: [
+      {
+        mark: "因",
+        title: "為什麼你會這樣",
+        body: `${typeProfile.core} 你不是單純被貼上一個 ${result.type}，而是這個類型在「${identityProfile.label}」情境裡會長出不同的樣子。${identityProfile.hook}`,
+      },
+      {
+        mark: "強",
+        title: "你的 3 個優勢",
+        list: typeProfile.strengths.map((item, index) => `${item}。${identityProfile.focus[index]}`),
+      },
+      {
+        mark: "盲",
+        title: "你的 3 個盲點",
+        list: typeProfile.blindspots,
+      },
+      {
+        mark: "壓",
+        title: "壓力下的變形人格",
+        body: typeProfile.stress,
+      },
+      {
+        mark: "身",
+        title: `在「${identityProfile.label}」身分裡，你最需要注意什麼`,
+        list: identityProfile.focus,
+      },
+      {
+        mark: "配",
+        title: "你適合怎樣的人或環境",
+        body: `${typeProfile.fit} ${identityProfile.environment} ${identityProfile.compatibility}`,
+      },
+      {
+        mark: "練",
+        title: "接下來 7 天可以做的 3 個練習",
+        list: identityProfile.exercises,
+        action: true,
+      },
+      {
+        mark: "軸",
+        title: "你的四個人格軸怎麼一起運作",
+        list: winners.map((trait) => dimensionCopy[trait]),
+      },
+    ],
+  };
+}
+
 function renderResult() {
   const identity = currentIdentity();
   const result = calculateScores();
   const profile = typeProfiles[result.type] || typeProfiles.INFP;
   const nickname = state.nickname || "你";
-  const identitySummary = result.type
-    .split("")
-    .map((trait) => identity.identityResults[trait])
-    .filter(Boolean)
-    .slice(0, 2)
-    .join(" ");
+  const report = buildReport(result);
 
   show(els.resultView);
   els.resultName.textContent = result.type;
   els.typeBadge.textContent = result.type;
-  els.resultTitle.textContent = `${profile[0]} · ${identity.label}`;
-  els.resultSummary.textContent = `${nickname}，${profile[1]} 這次你選的是「${identity.label}」身分，所以結果會把 MBTI 放回你的真實情境裡看。`;
-  els.identityResultTitle.textContent = identity.resultPrefix;
-  els.identityResultText.textContent = identitySummary;
+  els.resultTitle.textContent = report.paidName;
+  els.resultSummary.textContent = `${nickname}，${report.coreSummary}`;
+  els.identityResultTitle.textContent = `${identity.resultPrefix}：${report.paidName}`;
+  els.identityResultText.textContent = `${profile[1]} ${report.identityProfile.hook}`;
 
   els.dimensionBars.innerHTML = result.dimensions
     .map(
@@ -830,12 +1198,7 @@ function renderResult() {
     )
     .join("");
 
-  els.freeInsights.innerHTML = [
-    `身分入口：這次分析以「${identity.label}」情境為主，不會和其他身分答案混用。`,
-    `主要能量：${result.type[0] === "E" ? "你在互動中更容易被點亮。" : "你需要安靜空間把自己整理回來。"}`,
-    `判斷方式：${result.type[2] === "T" ? "你會先看事情是否合理、有效。" : "你會把感受、關係和溫度放進判斷。"}`,
-    `行動節奏：${result.type[3] === "J" ? "你在有結構和清楚進度時更穩。" : "你在保有彈性時更容易發揮。"}`,
-  ]
+  els.freeInsights.innerHTML = report.freeInsights
     .map((item) => `<li>${item}</li>`)
     .join("");
 
@@ -847,14 +1210,20 @@ function renderResult() {
 }
 
 function renderAdvancedReport() {
-  const identity = currentIdentity();
-  els.advancedInsights.innerHTML = identity.advancedReport
+  const result = calculateScores();
+  const report = buildReport(result);
+  els.advancedInsights.innerHTML = report.sections
     .map(
-      ([mark, title, text]) => `
-        <article class="advanced-card">
-          <span>${mark}</span>
-          <h4>${title}</h4>
-          <p>${text}</p>
+      (section) => `
+        <article class="advanced-card${section.action ? " action-card" : ""}">
+          <span>${section.mark}</span>
+          <h4>${section.title}</h4>
+          ${section.body ? `<p>${section.body}</p>` : ""}
+          ${
+            section.list
+              ? `<ul>${section.list.map((item) => `<li>${item}</li>`).join("")}</ul>`
+              : ""
+          }
         </article>
       `,
     )
@@ -879,6 +1248,7 @@ function downloadShareImage() {
   const identity = currentIdentity();
   const result = calculateScores();
   const profile = typeProfiles[result.type] || typeProfiles.INFP;
+  const report = buildReport(result);
   const canvas = els.shareCanvas;
   const ctx = canvas.getContext("2d");
 
@@ -898,7 +1268,7 @@ function downloadShareImage() {
   ctx.font = "900 140px sans-serif";
   ctx.fillText(result.type, 150, 335);
   ctx.font = "800 48px sans-serif";
-  ctx.fillText(`${identity.label} · ${profile[0]}`, 150, 420);
+  ctx.fillText(`${identity.label} · ${report.paidName}`, 150, 420);
   ctx.font = "500 34px sans-serif";
   wrapText(ctx, profile[1], 150, 510, 760, 56);
 
