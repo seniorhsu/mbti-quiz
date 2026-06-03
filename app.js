@@ -1,3 +1,5 @@
+const APP_VERSION = "20260604-1";
+
 const optionLabels = [
   { label: "完全不像我", value: -2 },
   { label: "比較不像", value: -1 },
@@ -922,7 +924,13 @@ function pairForTrait(trait) {
 }
 
 function initialState() {
-  return { nickname: "", selectedIdentity: "student", current: 0, answers: [] };
+  return {
+    appVersion: APP_VERSION,
+    nickname: "",
+    selectedIdentity: "student",
+    current: 0,
+    answers: [],
+  };
 }
 
 function loadState() {
@@ -930,6 +938,7 @@ function loadState() {
     const saved = JSON.parse(localStorage.getItem(storageKey));
     if (
       saved &&
+      saved.appVersion === APP_VERSION &&
       Array.isArray(saved.answers) &&
       identities[saved.selectedIdentity] &&
       Number.isInteger(saved.current)
@@ -944,6 +953,7 @@ function loadState() {
 }
 
 function saveState() {
+  state.appVersion = APP_VERSION;
   localStorage.setItem(storageKey, JSON.stringify(state));
 }
 
